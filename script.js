@@ -7,14 +7,19 @@ var symbolArray = ["!", "@", "#", "%", "^", "&", "*", "?", "-", "=", "+", "$", "
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-var passlength = prompt("Choose password length between 8 and 128 characters.")
+var passlength = prompt("Choose password length between 8 and 128 characters.");
+while (isNaN(passlength) || passlength < 8 || passlength > 128) passlength = prompt("length must be between 8 and 128 chracters.");
+
 var number = confirm("would you like to include numbers?")
 var upper = confirm("would you like to include uppercase letters?")
 var lower = confirm("would you like to include lowercase letters?")
 var symbol = confirm("would you like to include symbols?")
 
+//results
+var result = [];
+ if (number) {
 
-
+ }
 
 
 
