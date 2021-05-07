@@ -6,7 +6,7 @@ var symbolArray = ["!", "@", "#", "%", "^", "&", "*", "?", "-", "=", "+", "$", "
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
-
+function generatePassword(){
 var passlength = prompt("Choose password length between 8 and 128 characters.");
 while (isNaN(passlength) || passlength < 8 || passlength > 128) passlength = prompt("length must be between 8 and 128 chracters.");
 
@@ -17,12 +17,28 @@ var symbol = confirm("would you like to include symbols?")
 
 //results
 var result = [];
+var passwordResult = [];
  if (number) {
-
+ result = result.concat(numberArray);
  }
+ if (upper) {
+   result = result.concat(upperArray);
+ }
+ if (lower) {
+   result = result.concat(lowerArray);
+ }
+ if (symbol) {
+   result = result.concat(symbolArray);
+ }
+ console.log(result)
+
+for (var i = 0; i < passlength; i++) {
+ passwordResult.push (result[Math.floor(Math.random()* passlength.length)]);
 
 
-
+return passwordResult.join("");
+  }
+};
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
