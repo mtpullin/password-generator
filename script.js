@@ -31,7 +31,6 @@ if (number) {
  if (symbol) {
    result = result.concat(symbolArray);
  }
- console.log(result)
 
 for (var i = 0; i < passlength; i++) {
  passwordResult.push (result[Math.floor(Math.random()* result.length)]);
